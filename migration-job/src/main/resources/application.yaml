@@ -1,0 +1,11 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: migration
+  datasource:
+    url: jdbc:postgresql://localhost:54322/exam?useUnicode=true&characterEncoding=UTF-8
+    username: postgres
+    password: 123456

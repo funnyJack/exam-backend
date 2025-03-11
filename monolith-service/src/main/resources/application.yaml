@@ -1,0 +1,29 @@
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+    include-exception: true
+    include-binding-errors: always
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: monolith
+  datasource:
+    url: jdbc:postgresql://localhost:54322/exam?useUnicode=true&characterEncoding=UTF-8
+    username: postgres
+    password: 123456
+#以下配置应该放在 local 环境
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        #        打印 sql 中绑定的参数
+        orm:
+          jdbc:
+            bind: TRACE
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

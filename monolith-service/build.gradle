@@ -1,0 +1,17 @@
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+
+//spring
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+}
+
+//errors
+dependencies {
+    implementation 'com.github.czp3009:spring-errors:0.0.2'
+}
+
+dependencies {
+    implementation project(':persistent-starter')
+}

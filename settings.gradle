@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            //uniform lib and plugin version
+            if (requested.id.id.startsWith('org.jetbrains.kotlin')) {
+                useVersion kotlinVersion
+            }
+            if (requested.id.id.startsWith('org.springframework.boot')) {
+                useVersion springBootVersion
+            }
+        }
+    }
+}
+
+rootProject.name = 'exam-backend'
+
+// frontend service
+include 'monolith-service'
+
+//starter
+include 'persistent-starter'
+
+//job
+include 'migration-job'
